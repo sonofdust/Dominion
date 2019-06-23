@@ -1,13 +1,10 @@
 <?php
-include "caching.php";
-// Takes raw data from the request
+include "smartystreets.php";
 $json = file_get_contents('php://input');
-
-// Converts it into a PHP object
 $data = json_decode($json);
 
-$auth_id = '1232f705-7bd5-76d3-a0d3-6bcb004bce40';
-$auth_token = 'mU8xyF2a5hD9cIt7Z4M6';
+//$auth_id = '1232f705-7bd5-76d3-a0d3-6bcb004bce40';
+//$auth_token = 'mU8xyF2a5hD9cIt7Z4M6';
 
 
 
