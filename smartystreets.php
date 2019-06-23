@@ -28,7 +28,6 @@ class C_SmartyStreets extends C_Caching{
      }
     
      private function writeStateCityZip($state,$city,$ptr){
-        echo("Hitting the server");
         $zips =  $this->getSmartyZips($state,$city);
         $ptr[$state][$city] = array("TS"=>time(),"zipCodes"=>$zips);
         $this->write_content(json_encode($ptr), $this->file);

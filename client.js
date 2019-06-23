@@ -23,9 +23,12 @@ const state = document.getElementById("state").value;
 form.addEventListener("submit", submit);
 
 function submit(e) {
+  alert("Hello");
   e.preventDefault();
   const city = document.getElementById("city").value;
   const state = document.getElementById("state").value;
+
+  alert(state);
   //************************************************
   //   const myJson = ["62454", "06535", "39635", "00986"];
   //   clearZipList();
@@ -43,8 +46,6 @@ function submit(e) {
       return response.json();
     })
     .then(function(myJson) {
-      //  output.innerHTML = JSON.stringify(myJson);
-
       clearZipList();
       const output = document.getElementById("zipCodeList");
       myJson.forEach((item, index) => {
