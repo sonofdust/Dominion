@@ -2,6 +2,17 @@ const form = document.getElementById("form");
 /********************************************************************/
 /********************************************************************/
 /********************************************************************/
+document.getElementById("submit_btn").addEventListener("mouseover", checkCity);
+function checkCity() {
+  document.getElementById("city").value = document
+    .getElementById("city")
+    .value.trim();
+  if (document.getElementById("city").value.length === 0) {
+    alert("Must have a valed field entered in for the city.");
+    document.getElementById("city").focus();
+  }
+}
+
 const addToZipList = zipcode => {
   const node = document.createElement("div");
   const textnode = document.createTextNode(zipcode);
@@ -18,25 +29,13 @@ const clearZipList = () => {
 /********************************************************************/
 /********************************************************************/
 /********************************************************************/
-
 const state = document.getElementById("state").value;
 form.addEventListener("submit", submit);
 
 function submit(e) {
-  alert("Hello");
   e.preventDefault();
   const city = document.getElementById("city").value;
   const state = document.getElementById("state").value;
-
-  alert(state);
-  //************************************************
-  //   const myJson = ["62454", "06535", "39635", "00986"];
-  //   clearZipList();
-  //   const output = document.getElementById("zipCodeList");
-  //   myJson.forEach((item, index) => {
-  //     addToZipList(item);
-  //   });
-  //************************************************
 
   fetch("http://localhost/de/api.php", {
     method: "post",
